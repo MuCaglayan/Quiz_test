@@ -17,7 +17,7 @@ export class Answers {
               correctAnswer: 'Everest' },
             { question: 'Hangi gezegen Güneş Sistemi’ndeki en büyük gezegendir?',
               choices: [ 'Jüpiter', 'Satürn'],
-              correctAnswer: 'Satürn' },
+              correctAnswer: 'Jüpiter' },
             { question: 'Dünyanın en derin okyanusu hangisidir?',
               choices: ['Atlantik', 'Hint', 'Pasifik', 'Kuzey Buz Denizi'],
               correctAnswer: 'Kuzey Buz Denizi' }
