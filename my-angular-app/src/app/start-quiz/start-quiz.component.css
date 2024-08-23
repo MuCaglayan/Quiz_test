@@ -1,0 +1,53 @@
+.start-quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh; /* Full screen height */
+  background: linear-gradient(135deg, #00557f, #00263a); /* Dark ocean blue gradient */
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #fff; /* White heading color */
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Slight shadow effect */
+}
+
+.my-button-class {
+  padding: 15px 30px;
+  font-size: 1.25rem;
+  color: #fff; /* White text color */
+  background-color: #40e0d0; /* Turquoise button background color */
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease, border-radius 0.3s, box-shadow 0.3s; /* Transition effects */
+}
+
+.my-button-class:hover {
+  background-color: #00c3a3; /* Darker turquoise hover effect color */
+  transform: scale(1.05); /* Button enlarges on hover */
+  border-radius: 0px; /* Border radius changes to 0 on hover */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3); /* More noticeable shadow on hover */
+  background-image: url("data:image/svg+xml,%3Csvg width='52' height='26' viewBox='0 0 52 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23002f49' fill-opacity='0.4'%3E%3Cpath d='M10 10c0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6h2c0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4 3.314 0 6 2.686 6 6 0 2.21 1.79 4 4 4v2c-3.314 0-6-2.686-6-6 0-2.21-1.79-4-4-4-3.314 0-6-2.686-6-6zm25.464-1.95l8.486 8.486-1.414 1.414-8.486-8.486 1.414-1.414z' /%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  animation: animatedBackground 3s linear infinite alternate; /* Faster animation */
+}
+
+.my-button-class:active {
+  background-color: #00a08a; /* Darkest turquoise active effect color */
+  transform: scale(0.95); /* Button shrinks on click */
+  box-shadow: none; /* Remove shadow on click */
+}
+
+@keyframes animatedBackground {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100% 100%;
+  }
+}

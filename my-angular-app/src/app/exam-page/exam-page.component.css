@@ -1,0 +1,175 @@
+html, body {
+  height: 100vh; /* Ekranın tamamını kaplar */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1a2b44; /* Koyu mavi arka plan */
+}
+
+.container {
+  background: #2e3c54; /* Koyu mavi-gri arka plan */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100vw; /* Tam ekran genişliği */
+  height: 100vh; /* Tam ekran yüksekliği */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Başlık stili */
+h1 {
+  font-size: 24px;
+  color: #ffffff; /* Beyaz renk */
+  margin-bottom: 20px;
+  background-image: linear-gradient(45deg, #25aae1, #4481eb, #04befe, #3f86ed);
+  padding: 8px;
+  border-radius: 6px;
+}
+
+/* Liste stili */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; /* Sayfa boyunca aynı boyutta kalması için margin sıfırlandı */
+}
+
+li {
+  background: #3f4e66; /* Orta ton mavi arka plan */
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  color: #ffffff; /* Beyaz yazı rengi */
+}
+
+/* Buton stili */
+button {
+  background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed); /* 9 numaralı hover rengi */
+  color: #fff;
+  border: none;
+  border-radius: 50px; /* 50px yerine 4px kullanabilirsiniz */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-position 0.4s ease-in-out, background-color 0.3s;
+  margin: 10px 0;
+  width: 200px; /* Genişlik ve yükseklik tercihinize göre ayarlayın */
+  height: 55px; /* Genişlik ve yükseklik tercihinize göre ayarlayın */
+  text-align: center;
+  background-size: 300% 100%;
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75); /* 9 numaralı renk gölgesi */
+}
+
+/* Hover efekti */
+button:hover {
+  background-position: 100% 0;
+}
+
+/* Seçilen butonun özel stili */
+button.selected {
+  background-color: #003d6b; /* Daha koyu mavi */
+  background-image: none; /* Gradienti kaldır */
+  box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75); /* Aynı gölgeyi korur */
+}
+
+/* Buton tıklama ve odak stili */
+button:focus {
+  outline: none;
+}
+
+/* Devre dışı buton stili */
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+
+/* Mesaj alanı */
+p {
+  font-size: 25px;
+  color: #ffffff; /* Beyaz renk */
+  margin: 10px 0;
+}
+
+/* Seçeneklerin dikey olarak hizalanması */
+.choices {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+/* Gezinme butonları stili */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 120px;
+}
+
+.nav-buttons button {
+  width: 48%;
+  background-color: #0a7421; /* Mavi renk */
+  color: #fff;
+}
+
+.nav-buttons button:hover {
+  background-color: #248639;  /* Koyu mavi hover rengi */
+}
+
+.complete-exam-button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  outline: none;
+  color: #fff;
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.complete-exam-button:before {
+  content: '';
+  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing 20s linear infinite;
+  opacity: 0;
+  transition: opacity .3s ease-in-out;
+  border-radius: 10px;
+}
+
+.complete-exam-button:hover:before {
+  opacity: 1;
+}
+
+.complete-exam-button:active {
+  color: #000;
+}
+
+.complete-exam-button:active:before {
+  background: transparent;
+}
+
+@keyframes glowing {
+  0% { background-position: 0 0; }
+  50% { background-position: 400% 0; }
+  100% { background-position: 0 0; }
+}
+

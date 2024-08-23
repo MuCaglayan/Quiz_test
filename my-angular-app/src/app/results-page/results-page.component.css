@@ -1,0 +1,21 @@
+.result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Ekranın yüksekliği kadar */
+    text-align: center;
+    background: linear-gradient(135deg, #002bff, #00ffd5); /* Derin okyanus teması */
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #e0f7fa; /* Açık mavi başlık rengi */
+}
+
+p {
+    font-size: 1.25rem;
+    color: #b2ebf2; /* Daha açık mavi metin rengi */
+}

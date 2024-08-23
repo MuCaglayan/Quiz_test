@@ -1,0 +1,27 @@
+<div class="container">
+<!-- Dinamik Başlık ve Soru Numarası -->
+ <h1>Soru {{ currentQuestionNumber }}: {{ currentQuestion }}</h1>
+  
+ <!-- Soru Şıkları Butonları -->
+ <div class="choices">
+     <button 
+       *ngFor="let choice of currentChoices" 
+       (click)="selectAnswer(choice)"
+       [ngClass]="{'selected': isButtonSelected(choice)}">
+       {{ choice }}
+     </button>
+ </div>
+ 
+ <!-- Geri Bildirim Mesajı -->
+ <p *ngIf="feedback">{{ feedback }}</p>
+ 
+ <!-- Gezinme Butonları -->
+ <div class="nav-buttons">
+     <button (click)="previousQuestion()" [disabled]="currentQuestionNumber === 1"> <<< </button>
+     <button (click)="nextQuestion()" [disabled]="currentQuestionNumber === totalQuestions"> >>></button>
+ </div>
+ 
+ <!-- Sınavı Bitir Butonu -->
+ <button *ngIf="currentQuestionNumber === totalQuestions" class="complete-exam-button" (click)="completeExam()">Sınavı Bitir</button>
+ <p *ngIf="examCompleted">Your score is: {{ finalScore }}</p>
+</div>  
