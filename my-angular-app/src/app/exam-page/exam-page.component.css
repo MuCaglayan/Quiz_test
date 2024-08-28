@@ -11,13 +11,13 @@ html, body {
 .container {
   background: #2e3c54; /* Koyu mavi-gri arka plan */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: 100vw; /* Tam ekran genişliği */
-  height: 100vh; /* Tam ekran yüksekliği */
+  width : 100vw; /* Tam ekran genişliği */
+  height: 100vh;  /*Tam ekran yüksekliği */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
+  text-align: center; 
 }
 
 /* Başlık stili */
@@ -25,7 +25,7 @@ h1 {
   font-size: 24px;
   color: #ffffff; /* Beyaz renk */
   margin-bottom: 20px;
-  background-image: linear-gradient(45deg, #25aae1, #4481eb, #04befe, #3f86ed);
+  background-image: linear-gradient(60deg, #25aae1, #4481eb, #04befe, #3f86ed);
   padding: 8px;
   border-radius: 6px;
 }
@@ -47,7 +47,7 @@ li {
 }
 
 /* Buton stili */
-button {
+.choices button {
   background-image: linear-gradient(to right, #25aae1, #4481eb, #04befe, #3f86ed); /* 9 numaralı hover rengi */
   color: #fff;
   border: none;
@@ -64,24 +64,24 @@ button {
 }
 
 /* Hover efekti */
-button:hover {
+.choices button:hover {
   background-position: 100% 0;
 }
 
 /* Seçilen butonun özel stili */
-button.selected {
+.choices button.selected {
   background-color: #003d6b; /* Daha koyu mavi */
   background-image: none; /* Gradienti kaldır */
   box-shadow: 0 4px 15px 0 rgba(65, 132, 234, 0.75); /* Aynı gölgeyi korur */
 }
 
 /* Buton tıklama ve odak stili */
-button:focus {
+.choices button:focus {
   outline: none;
 }
 
 /* Devre dışı buton stili */
-button:disabled {
+.choices button:disabled {
   background-color: #cccccc;
   cursor: not-allowed;
 }
@@ -107,17 +107,53 @@ p {
   display: flex;
   justify-content: space-between;
   width: 80%;
-  max-width: 120px;
+  max-width: 150px; /* Genişlik biraz artırıldı */
+}
+
+/* Gezinme butonları stili */
+.nav-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 150px; /* Genişlik biraz artırıldı */
 }
 
 .nav-buttons button {
-  width: 48%;
-  background-color: #0a7421; /* Mavi renk */
+  width: 60px;  /* Buton genişliği */
+  height: 60px; /* Buton yüksekliği */
+  background-image: linear-gradient(to right, #2e7d32, #4caf50, #5bb85b, #a3d9a1); /* Yeşil tonlarında gradient, koyudan açığa */
   color: #fff;
+  border: none;
+  border-radius: 50%; /* Tamamen yuvarlak şekil */
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-position 0.4s ease-in-out, background-color 0.3s;
+  text-align: center;
+  background-size: 400% 100%; /* Gradient genişliği arttırıldı */
+  box-shadow: 0 4px 15px 0 rgba(0, 128, 0, 0.75); /* Yeşil gölge */
 }
 
+/* Hover efekti */
 .nav-buttons button:hover {
-  background-color: #248639;  /* Koyu mavi hover rengi */
+  background-position: 100% 0; /* Hover efekti için gradient kaydırma */
+}
+
+/* Buton tıklama ve odak stili */
+.nav-buttons button:focus {
+  outline: none;
+}
+
+/* Seçilen butonun özel stili */
+.nav-buttons button.selected {
+  background-color: #004d00; /* Daha koyu yeşil */
+  background-image: none; /* Gradienti kaldır */
+  box-shadow: 0 4px 15px 0 rgba(0, 128, 0, 0.75); /* Aynı gölgeyi korur */
+}
+
+/* Devre dışı buton stili */
+.nav-buttons button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
 }
 
 .complete-exam-button {
@@ -140,7 +176,7 @@ p {
 
 .complete-exam-button:before {
   content: '';
-  background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+  background: linear-gradient(45deg, #3700ff, #0066ff, #00ff80, #48ff00, #00ffd5, #002bff, #0051ff, #4400ff);
   position: absolute;
   top: -2px;
   left: -2px;
